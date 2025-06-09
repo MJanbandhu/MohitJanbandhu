@@ -1,0 +1,364 @@
+/* Reset and base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Header and Navigation */
+header {
+  background-color: #222;
+  padding: 1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.hero img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+/* Section Layout */
+section {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Skills Two Column Layout */
+.skills-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.skills-left,
+.skills-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Skill Category Styling */
+.skill-category {
+  margin-bottom: 2rem;
+}
+
+.skill-category h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.skill-category p {
+  margin: 0;
+  padding-left: 1rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Sub-skills and nested levels */
+.sub-skill {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sub-skill h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+  color: #333;
+}
+
+.sub-sub-skill {
+  margin-left: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.sub-sub-skill h5 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  color: #444;
+}
+
+.sub-sub-skill p,
+.sub-skill p {
+  margin: 0;
+  padding-left: 1rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Icons */
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.skill-icons img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.skill-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* Project Section */
+.project {
+  margin-bottom: 1.5rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #222;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills-wrapper {
+    flex-direction: column;
+  }
+
+  .skills-left,
+  .skills-right {
+    min-width: 100%;
+  }
+}
+
+.skills-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.skills-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.skills-right {
+  flex: 1;
+  min-width: 300px;
+  margin-left: auto;
+}
+
+#licence-certification, #recent-participation {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+#licence-certification h3 {
+  margin-top: 1rem;
+  color: #222;
+}
+
+#licence-certification ul,
+#recent-participation ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+  color: #444;
+}
+
+.animated-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2rem;
+  color: #222;
+  white-space: nowrap;
+  border-right: 2px solid #222;
+  width: fit-content;
+  animation: blinkCursor 0.75s step-end infinite;
+}
+
+@keyframes blinkCursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.animated-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+  color: #222;
+  letter-spacing: 0.05em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.animated-name span {
+  display: inline-block;
+  opacity: 0;
+  transform: rotateX(90deg);
+  animation: rotateIn 0.5s ease forwards;
+}
+
+@keyframes rotateIn {
+  to {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
+.animated-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+  color: #222;
+  letter-spacing: 0.05em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  perspective: 600px;
+}
+
+.animated-name span {
+  display: inline-block;
+  opacity: 0;
+  transform: rotateX(90deg);
+  animation: rotateXIn 0.5s forwards;
+}
+
+@keyframes rotateXIn {
+  to {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+.typewriter-name {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+  color: #222;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #333;
+  margin-top: 2rem;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#about {
+  width: 100%;
+  padding: 2rem 3rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  box-sizing: border-box;
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  color: #222;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.3rem;
+  text-align: justify;
+  letter-spacing: 0.02em;
+  color: #444;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  #about {
+    padding: 1.5rem 1rem;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #222;
+  z-index: 1000;
+  padding: 1rem 0;
+  height: 60px; /* specify header height */
+}
+
+body {
+  padding-top: 60px; /* same as header height */
+}
+
+html {
+  scroll-padding-top: 60px;
+}
+section {
+  padding-top: 20px; /* extra breathing space */
+}
+
+section h2 {
+  font-size: 1.6rem; /* a bit smaller than 2rem */
+  font-weight: bold;
+  color: #222;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+#about h2 {
+  font-size: 1.6rem !important;
+  font-weight: bold;
+  color: #222;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5fbff; /* Very light blue */
+  color: #333;
+}
