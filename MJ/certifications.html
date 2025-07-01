@@ -1,20 +1,28 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Skills | Mohit Janbandhu</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Certifications | Mohit Janbandhu</title>
+  <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
+
+  <!-- Neural Canvas Background -->
+  <canvas id="neuronCanvas"></canvas>
+
+  <!-- Poster Image (Full Height, Left Side) 
+  <div class="poster-container">
+    <img src="../images/profile.jpg" alt="Profile Poster" class="poster-image" />
+    <div class="poster-overlay"></div>
+  </div> -->
+
   <!-- Header & Navigation -->
   <header>
     <nav>
       <div class="logo">Mohit Janbandhu</div>
 
-    <!-- Desktop Dropdown Menu -->
+      <!-- Desktop Dropdown Menu -->
       <div class="dropdown desktop-menu">
         <div class="menu-icon">⋯</div>
         <ul class="dropdown-content">
@@ -27,7 +35,7 @@
         </ul>
       </div>
 
-    <!-- Mobile Hamburger Menu -->
+      <!-- Mobile Hamburger Menu -->
       <div class="hamburger mobile-menu" onclick="toggleMenu()">☰</div>
       <ul class="nav-links" id="navLinks">
         <li><a href="about.html">About</a></li>
@@ -40,18 +48,30 @@
     </nav>
   </header>
 
-  <!-- Page-specific content -->
-  <main>
-    <section id="skills">
-      <h2>Skills</h2>
-      <p>Details about your skills, tools, languages...</p>
-    </section>
-  </main>
+  <!-- Content Section -->
+  <div class="content">
+    <main>
+      <section id="certifications">
+        <h2 class="section-heading">Licenses & Certifications</h2>
+        <ul>
+          <li>Certified Data Scientist – IABAC (2024)</li>
+          <li>Certified Data Scientist – NASSCOM (2024)</li>
+          <li>AI & ML Foundation – IBM SkillsBuild</li>
+          <li>Deep Learning Specialization – Coursera (Andrew Ng)</li>
+          <li>TensorFlow Developer Certificate – TensorFlow.org</li>
+          <li>Big Data & Hadoop – Simplilearn</li>
+          <li>Power BI for Data Analysis – Udemy</li>
+          <li>Python for Data Science – DataCamp</li>
+        </ul>
+      </section>
+    </main>
+  </div>
 
-  <!--Optional Footer -->
+  <!-- Footer -->
   <footer>
     <p>© 2025 Mohit Janbandhu</p>
   </footer>
-  <script src="script.js"></script>
+
+  <script src="../script.js"></script>
 </body>
 </html>

@@ -4,15 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Recent Participation | Mohit Janbandhu</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
+
+  <!-- Neural Canvas Background -->
+  <canvas id="neuronCanvas"></canvas>
+
+  <!-- Poster Image (Left Fixed Panel)
+  <div class="poster-container">
+    <img src="../images/profile.jpg" alt="Profile Poster" class="poster-image" />
+    <div class="poster-overlay"></div>
+  </div>  -->
+
   <!-- Header & Navigation -->
   <header>
     <nav>
       <div class="logo">Mohit Janbandhu</div>
 
-    <!-- Desktop Dropdown Menu -->
+      <!-- Desktop Dropdown Menu -->
       <div class="dropdown desktop-menu">
         <div class="menu-icon">⋯</div>
         <ul class="dropdown-content">
@@ -25,7 +35,7 @@
         </ul>
       </div>
 
-    <!-- Mobile Hamburger Menu -->
+      <!-- Mobile Hamburger Menu -->
       <div class="hamburger mobile-menu" onclick="toggleMenu()">☰</div>
       <ul class="nav-links" id="navLinks">
         <li><a href="about.html">About</a></li>
@@ -38,20 +48,30 @@
     </nav>
   </header>
 
-  <main>
-    <section id="recent-participation">
-      <h2>Recent Participation</h2>
-      <div>
-        <strong>World Audio Visual & Entertainment Summit (WAVES 2025)</strong><br /><br />
-        The World Audio Visual & Entertainment Summit is an event focused on establishing India as a key hub for the media and entertainment industry 
-        with a strong emphasis on cultural diversity.
-      </div>
-    </section>
-  </main>
+  <!-- Main Section -->
+  <div class="content">
+    <main>
+      <section id="recent-participation">
+        <h2 class="section-heading">Recent Participation</h2>
 
+        <div class="project">
+          <h3>World Audio Visual & Entertainment Summit (WAVES 2025)</h3>
+          <p>
+            Participated in the WAVES Anti-Piracy Challenge 2025, part of the prestigious World Audio Visual & Entertainment Summit.<br /><br />
+            Submitted a concept focused on enhancing digital content security and protecting intellectual property in the streaming and content creation ecosystem.<br /><br />
+            WAVES aims to establish India as a global leader in media & entertainment, promoting innovation, digital rights protection, and cultural diversity across platforms.
+          </p>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
   <footer>
     <p>© 2025 Mohit Janbandhu</p>
   </footer>
-  <script src="script.js"></script>
+
+  <script src="../script.js"></script>
 </body>
 </html>

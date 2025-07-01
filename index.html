@@ -2,50 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Welcome | Mohit Janbandhu</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Fixed Background Neuron Canvas -->
+  <canvas id="neuronCanvas"></canvas>
+
+  <!-- Poster Image (Left Full Height) -->
+  <div class="poster-container">
+    <img src="images/profile.jpg" alt="Profile Poster" class="poster-image" />
+    <div class="poster-overlay"></div>
+  </div>
 
   <!-- Header & Navigation -->
   <header>
     <nav>
       <div class="logo">Mohit Janbandhu</div>
 
-    <!-- Desktop Dropdown Menu -->
+      <!-- Desktop Dropdown Menu -->
       <div class="dropdown desktop-menu">
         <div class="menu-icon">⋯</div>
         <ul class="dropdown-content">
-          <li><a href="about.html">About</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="certifications.html">Certifications</a></li>
-          <li><a href="recent-participation.html">Recent Participation</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="mj/about.html">About</a></li>
+          <li><a href="mj/skills.html">Skills</a></li>
+          <li><a href="mj/projects.html">Projects</a></li>
+          <li><a href="mj/certifications.html">Certifications</a></li>
+          <li><a href="mj/recent-participation.html">Recent Participation</a></li>
+          <li><a href="mj/contact.html">Contact</a></li>
         </ul>
       </div>
 
-    <!-- Mobile Hamburger Menu -->
+      <!-- Mobile Hamburger Menu -->
       <div class="hamburger mobile-menu" onclick="toggleMenu()">☰</div>
       <ul class="nav-links" id="navLinks">
-        <li><a href="about.html">About</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="certifications.html">Certifications</a></li>
-        <li><a href="recent-participation.html">Recent Participation</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="mj/about.html">About</a></li>
+        <li><a href="mj/skills.html">Skills</a></li>
+        <li><a href="mj/projects.html">Projects</a></li>
+        <li><a href="mj/certifications.html">Certifications</a></li>
+        <li><a href="mj/recent-participation.html">Recent Participation</a></li>
+        <li><a href="mj/contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Main Hero Section -->
+  <!-- Hero Section -->
   <main class="hero">
-    <img src="assets/your-profile.jpg" alt="Profile photo of Mohit Janbandhu" />
-    <h1 id="typewriterName" class="typewriter-name"></h1>
-    <h1>Hi, I'm Mohit A. Janbandhu</h1>
-    <p>Certified Data Scientist by IABAC and NASSCOM</p>
-    <p>|| Software Engineer || Data Scientist || AI/ML/DL ||</p>
+    <div class="hero-text">
+      <h1 id="typewriterName" class="typewriter-name"></h1>
+      <h1>Hi, I'm Mohit A. Janbandhu</h1>
+      <p>Certified Data Scientist by IABAC and NASSCOM</p>
+      <p>|| Software Engineer || Data Scientist || AI/ML/DL ||</p>
+    </div>
   </main>
 
   <!-- Footer -->
@@ -53,36 +63,25 @@
     <p>© 2025 Mohit Janbandhu</p>
   </footer>
 
+  <!-- JS -->
   <script src="script.js"></script>
+  <script>
+    const menuIcon = document.querySelector('.menu-icon');
+
+    // Apply animation class on load
+    if (menuIcon) {
+      menuIcon.classList.add('animate-pulse');
+
+      // Remove animation after click
+      menuIcon.addEventListener('click', () => {
+        menuIcon.classList.remove('animate-pulse');
+      });
+
+      // Auto-remove after 10 seconds
+      setTimeout(() => {
+        menuIcon.classList.remove('animate-pulse');
+      }, 10000);
+    }
+  </script>
 </body>
 </html>
-
-
-
-
-
-
- 
-
-
-
-
-  <!--<header>
-    <nav>
-      <div class="logo">Mohit Janbandhu</div>
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
-        <ul class="nav-links" id="navLinks">
-      
-      <div class="dropdown">
-        <div class="menu-icon">⋯</div>
-        <ul class="dropdown-content"> 
-          <li><a href="about.html">About</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="certifications.html">Certifications</a></li>
-          <li><a href="recent-participation.html">Recent Participation</a></li>
-          <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header> -->
- 

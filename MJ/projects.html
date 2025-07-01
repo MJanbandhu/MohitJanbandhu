@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Mohit Janbandhu</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <!-- Neural Canvas Background -->
+  <canvas id="neuronCanvas"></canvas>
+
+  <!-- Poster Image (Full Height, Left Side) 
+  <div class="poster-container">
+    <img src="../images/profile.jpg" alt="Profile Poster" class="poster-image" />
+    <div class="poster-overlay"></div>
+  </div> -->
+
+  <!-- Header & Navigation -->
+  <header>
+    <nav>
+      <div class="logo">Mohit Janbandhu</div>
+
+      <!-- Desktop Dropdown Menu -->
+      <div class="dropdown desktop-menu">
+        <div class="menu-icon">⋯</div>
+        <ul class="dropdown-content">
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="recent-participation.html">Recent Participation</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Mobile Hamburger Menu -->
+      <div class="hamburger mobile-menu" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="recent-participation.html">Recent Participation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Project Content Section -->
+  <div class="content">
+    <main>
+      <section id="projects">
+        <h2 class="section-heading">Projects</h2>
+
+        <div class="project">
+          <h3>CipherDeepSense – Stock Prediction AI</h3>
+          <p>An AI-powered stock forecasting app using ANN, time series models, reinforcement learning, and real-time prediction. Shows live and historical predictions, color-coded insights, and chart overlays. Includes open-source web and Android versions.</p>
+        </div>
+
+        <div class="project">
+          <h3>Employee Performance Analysis</h3>
+          <p>Analyzed employee performance trends, visualized KPIs, and used machine learning models for prediction. Improved decision-making for HR management using insights from classification and regression models.</p>
+        </div>
+
+        <div class="project">
+          <h3>Rubixe Internship – Client Subscription Prediction</h3>
+          <p>Predicted whether clients would subscribe to a term deposit using logistic regression and tree-based models. Cleaned and visualized banking marketing data and improved F1-score via feature engineering and hyperparameter tuning.</p>
+        </div>
+
+        <div class="project">
+          <h3>Rice Leaf Disease Classification</h3>
+          <p>Built a CNN-based image classification model to detect rice leaf diseases. Achieved high accuracy using OpenCV preprocessing, TensorFlow/Keras modeling, and image augmentation. Deployed model for real-time use in agriculture.</p>
+        </div>
+
+        <div class="project">
+          <h3>AI Poster Segmentation & Summarization</h3>
+          <p>Developed an end-to-end pipeline for image segmentation, object detection, OCR, and summary generation. Used OpenCV, TensorFlow, Tesseract, and Streamlit to analyze and visualize poster data automatically.</p>
+        </div>
+
+        <div class="project">
+          <h3>IABAC Capstone – NLP Classification</h3>
+          <p>Implemented multiple vectorization methods (BoW, TF-IDF, Word Embeddings) for text classification. Achieved high accuracy using logistic regression, SVMs, and deep learning models. Fine-tuned results for probabilistic outputs.</p>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Mohit Janbandhu</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
