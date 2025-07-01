@@ -1,9 +1,9 @@
-// Add basic interactivity or leave it empty for now
+// Portfolio Loaded Console Log
 console.log("Portfolio loaded!");
 
+// Typewriter Effect for Name
 const text = "Mohit Janbandhu";
 const container = document.getElementById("typewriterName");
-
 let index = 0;
 
 function typeWriter() {
@@ -14,10 +14,21 @@ function typeWriter() {
   } else {
     setTimeout(() => {
       index = 0;
-      container.textContent = ""; // clear for next loop
+      container.textContent = ""; // Clear for next loop
       typeWriter();
     }, 2000); // 2s pause before restarting
   }
 }
 
-typeWriter();
+// Only run typewriter if the element exists
+if (container) {
+  typeWriter();
+}
+
+// Toggle mobile hamburger menu
+function toggleMenu() {
+  const navLinks = document.getElementById("navLinks");
+  if (navLinks) {
+    navLinks.classList.toggle("show"); // not 'active', should match CSS
+  }
+}
