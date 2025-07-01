@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills | Mohit Janbandhu</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .skills-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      padding: 30px;
+    }
+
+    .skill-category {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 10px rgba(0, 255, 153, 0.1);
+    }
+
+    .skill-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .skill-icons img {
+      height: 60px;
+      width: auto;
+    }
+
+    .skill-category h3,
+    .sub-skill h4,
+    .sub-sub-skill h5 {
+      color: #fff;
+    }
+
+    .sub-skill p,
+    .sub-sub-skill p {
+      color: #ccc;
+      margin-left: 10px;
+    }
+
+    h2.section-heading {
+      color: #58a6ff;
+      text-align: center;
+      padding-top: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .skills-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="neuronCanvas"></canvas>
+
+  <header>
+    <nav>
+      <div class="logo">Mohit Janbandhu</div>
+      <div class="dropdown desktop-menu">
+        <div class="menu-icon">⋯</div>
+        <ul class="dropdown-content">
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="recent-participation.html">Recent Participation</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="hamburger mobile-menu" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="recent-participation.html">Recent Participation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="skills">
+      <h2 class="section-heading">Skills</h2>
+
+      <div class="skills-wrapper">
+
+        <div class="skill-category">
+          <h3>Programming Languages</h3>
+          <div class="skill-icons">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+            <img src="https://www.r-project.org/logo/Rlogo.png" alt="R">
+            <img src="../assets/c.png" alt="C">
+            <img src="../assets/java.png" alt="Java">
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Machine Learning</h3>
+          <div class="sub-skill">
+            <h4>Supervised</h4>
+            <p><strong>Regression:</strong> Linear, SVR, Decision Tree</p>
+            <p><strong>Classification:</strong> Logistic, SVM, DT, RF, XGBoost, AdaBoost, KNN, Naive Bayes</p>
+          </div>
+          <div class="sub-skill">
+            <h4>Unsupervised</h4>
+            <p>K-Means Clustering</p>
+          </div>
+        </div>
+
+
+
+        <div class="skill-category">
+          <h3>IDE / Platforms</h3>
+          <div class="skill-icons">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg" alt="Jupyter">
+            <img src="../assets/colab.png" alt="Colab">
+            <img src="../assets/vs.png" alt="Visual Studio">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Apache_NetBeans_Logo.svg" alt="NetBeans">
+            <img src="../assets/vscode.png" alt="VS Code">
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Deep Learning & NLP</h3>
+          <p><strong>ANN:</strong> Feedforward, MLP</p>
+          <p><strong>CNN:</strong> Image Classification, Object Detection</p>
+          <p><strong>Time Series:</strong> RNN, LSTM</p>
+          <p><strong>NLP:</strong> Sentiment Analysis, Tokenization, Classification, Transformers</p>
+        </div>
+
+        <div class="skill-category">
+          <h3>Visualization</h3>
+          <div class="skill-icons">
+            <img src="../assets/matplotlib.png" alt="Matplotlib">
+            <img src="https://seaborn.pydata.org/_static/logo-wide-lightbg.svg" alt="Seaborn">
+            <img src="../assets/powerbi.png" alt="PowerBI">
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Libraries & Frameworks</h3>
+          <div class="skill-icons">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
+            <img src="../assets/scikit.png" alt="Scikit-Learn">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg" alt="Keras">
+            <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face">
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Statistical Analysis</h3>
+          <div class="skill-icons">
+            <img src="../assets/hypothesis.png" alt="Hypothesis Testing">
+            <img src="../assets/ab.png" alt="A/B Testing">
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Database & Big Data</h3>
+          <div class="skill-icons">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite">
+            <img src="https://webassets.mongodb.com/_com_assets/cms/mongodb-logo-rgb-j6w271g1xn.jpg" alt="MongoDB">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Hadoop_logo.svg" alt="Hadoop">
+            <img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Spark">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" alt="Kafka">
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Git Version Control</h3>
+          <div class="skill-icons">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" alt="Git Bash">
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Cloud Platforms</h3>
+          <div class="skill-icons">
+            <img src="../assets/aws.png" alt="AWS">
+            <img src="../assets/azure.png" alt="Azure">
+          </div>
+        </div>
+
+
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Mohit Janbandhu</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

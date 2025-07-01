@@ -1,27 +1,40 @@
-/* Reset and base */
+/* Reset and base styles */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-padding-top: 60px;
+}
+
 body {
-  margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
+  background-color: #f5fbff; /* Very light blue */
   color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 60px; /* matches header height */
 }
 
 /* Header and Navigation */
 header {
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: #222;
-  padding: 1rem;
+  z-index: 1000;
+  height: 60px;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1.5rem;
+  height: 100%;
 }
 
 nav .logo {
@@ -30,15 +43,62 @@ nav .logo {
   font-weight: bold;
 }
 
-nav ul {
+nav ul.nav-links {
   list-style: none;
   display: flex;
   gap: 1rem;
 }
 
-nav a {
+nav ul.nav-links li a {
   color: #fff;
   text-decoration: none;
+  padding: 0.5rem 0.75rem;
+}
+
+nav a,
+nav a:visited,
+nav a:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ddd;
+}
+
+/* Hamburger Icon (Three Line Menu) */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #222;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+    box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin-bottom: 0.5rem;
+  }
 }
 
 /* Hero Section */
@@ -52,14 +112,49 @@ nav a {
   border-radius: 50%;
 }
 
+/* Typewriter */
+.typewriter-name {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+  color: #222;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #333;
+  margin-top: 2rem;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Section Layout */
 section {
   padding: 2rem 1rem;
   max-width: 1000px;
   margin: auto;
+  padding-top: 40px;
 }
 
-/* Skills Two Column Layout */
+section h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #222;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+/* About Section */
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.3rem;
+  text-align: justify;
+  letter-spacing: 0.02em;
+  color: #444;
+}
+
+/* Skills Layout */
 .skills-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -72,7 +167,6 @@ section {
   min-width: 300px;
 }
 
-/* Skill Category Styling */
 .skill-category {
   margin-bottom: 2rem;
 }
@@ -83,14 +177,15 @@ section {
   color: #222;
 }
 
-.skill-category p {
+.skill-category p,
+.sub-skill p,
+.sub-sub-skill p {
   margin: 0;
   padding-left: 1rem;
   line-height: 1.6;
   font-size: 0.95rem;
 }
 
-/* Sub-skills and nested levels */
 .sub-skill {
   margin-left: 1rem;
   margin-bottom: 1rem;
@@ -113,15 +208,6 @@ section {
   color: #444;
 }
 
-.sub-sub-skill p,
-.sub-skill p {
-  margin: 0;
-  padding-left: 1rem;
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
-/* Icons */
 .skill-icons {
   display: flex;
   flex-wrap: wrap;
@@ -140,49 +226,14 @@ section {
   transform: scale(1.1);
 }
 
-/* Project Section */
+/* Projects */
 .project {
   margin-bottom: 1.5rem;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #222;
-  color: #fff;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .skills-wrapper {
-    flex-direction: column;
-  }
-
-  .skills-left,
-  .skills-right {
-    min-width: 100%;
-  }
-}
-
-.skills-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.skills-left {
-  flex: 1;
-  min-width: 300px;
-}
-
-.skills-right {
-  flex: 1;
-  min-width: 300px;
-  margin-left: auto;
-}
-
-#licence-certification, #recent-participation {
+/* Certification & Participation */
+#licence-certification,
+#recent-participation {
   max-width: 800px;
   margin: 2rem auto;
   padding: 0 1rem;
@@ -200,165 +251,849 @@ footer {
   color: #444;
 }
 
-.animated-name {
-  font-size: 2.5rem;
-  font-weight: bold;
+/* Footer */
+footer {
+  margin-top: auto;
   text-align: center;
-  margin-top: 2rem;
-  color: #222;
-  white-space: nowrap;
-  border-right: 2px solid #222;
-  width: fit-content;
-  animation: blinkCursor 0.75s step-end infinite;
+  padding: 1rem;
+  background-color: #222;
+  color: #fff;
+  font-size: 0.9rem;
 }
 
-@keyframes blinkCursor {
-  50% {
-    border-color: transparent;
-  }
-}
-
-.animated-name {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 1rem;
-  color: #222;
-  letter-spacing: 0.05em;
+/* Core Styles */
+nav {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.animated-name span {
-  display: inline-block;
-  opacity: 0;
-  transform: rotateX(90deg);
-  animation: rotateIn 0.5s ease forwards;
-}
-
-@keyframes rotateIn {
-  to {
-    opacity: 1;
-    transform: rotateX(0deg);
-  }
-}
-
-.animated-name {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 1rem;
-  color: #222;
-  letter-spacing: 0.05em;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  perspective: 600px;
-}
-
-.animated-name span {
-  display: inline-block;
-  opacity: 0;
-  transform: rotateX(90deg);
-  animation: rotateXIn 0.5s forwards;
-}
-
-@keyframes rotateXIn {
-  to {
-    opacity: 1;
-    transform: rotateX(0deg);
-  }
-}
-.typewriter-name {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: bold;
-  font-family: 'Segoe UI', sans-serif;
-  color: #222;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid #333;
-  margin-top: 2rem;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-#about {
-  width: 100%;
-  padding: 2rem 3rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
-  box-sizing: border-box;
-}
-
-#about h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  text-align: left;
-  color: #222;
-}
-
-.about-content p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 1.3rem;
-  text-align: justify;
-  letter-spacing: 0.02em;
-  color: #444;
-}
-
-.about-content p:last-child {
-  margin-bottom: 0;
-}
-
-@media (max-width: 600px) {
-  #about {
-    padding: 1.5rem 1rem;
-  }
-}
-
-header {
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  padding: 0 1.5rem;
+  height: 60px;
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #222;
   z-index: 1000;
-  padding: 1rem 0;
-  height: 60px; /* specify header height */
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Dropdown (Desktop) */
+.dropdown {
+  position: relative;
+}
+
+.menu-icon {
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background-color: #222;
+  border: 1px solid #444;
+  padding: 0.5rem 1rem;
+  list-style: none;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-content li {
+  margin-bottom: 0.5rem;
+}
+
+.dropdown-content li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hamburger (Mobile) */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Mobile Nav Links */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #222;
+  width: 200px;
+  padding: 1rem;
+  box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.4);
+  list-style: none;
+}
+
+.nav-links li {
+  margin-bottom: 0.5rem;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+/* Responsive Visibility */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu {
+    display: none;
+  }
+  .desktop-menu {
+    display: block;
+  }
+}
+
+/* Dropdown (⋯ menu) */
+.dropdown {
+  position: relative; /* This makes the child absolutely positioned inside */
+}
+
+.menu-icon {
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* Directly below the ⋯ icon */
+  right: 0;
+  background-color: #222;
+  border: 1px solid #444;
+  padding: 0.5rem 1rem;
+  list-style: none;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  min-width: 200px;
+}
+
+.dropdown-content li {
+  margin-bottom: 0.5rem;
+}
+
+.dropdown-content li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 0.3rem 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* General Navigation Layout */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  padding: 0.75rem 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Logo Styling */
+nav .logo {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Three-dot dropdown desktop menu */
+.desktop-menu {
+  position: relative;
+  display: none; /* hide on small screens */
+}
+
+.menu-icon {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 2.5rem;
+  background-color: #fff;
+  min-width: 180px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  padding: 0.5rem 0;
+}
+
+.dropdown-content li {
+  list-style: none;
+}
+
+.dropdown-content li a {
+  display: block;
+  color: #222;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Show dropdown on hover */
+.desktop-menu:hover .dropdown-content {
+  display: block;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Nav links for mobile only */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background-color: #222;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 200px;
+  padding: 1rem;
+  box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.nav-links.show {
+  display: flex;
+}
+
+.nav-links li {
+  margin-bottom: 0.5rem;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Responsive rules */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none; /* hide three-dot menu */
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    display: none !important; /* force hidden on desktop */
+  }
+
+  .desktop-menu {
+    display: block;
+  }
+}
+
+
+/* Dropdown base */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-icon {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Hidden menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f5fbff; /* Match page background */
+  min-width: 180px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  padding: 0.5rem 0;
+}
+
+.dropdown-content li {
+  list-style: none;
+}
+
+.dropdown-content li a {
+  display: block;
+  color: #222;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+  background-color: #e0f0ff; /* subtle hover color */
+}
+
+/* Show on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f5fbff; /* match background */
+  min-width: 180px;
+  z-index: 1001;
+  padding: 0.5rem 0;
+  border: none;
+  box-shadow: none; /* removed box effect */
+  border-radius: 0;  /* make sure it's flat */
+}
+
+
+/* === VISUAL ENHANCEMENTS (NEURONS + POSTER) === */
+
+/* Neuron Canvas Background */
+#neuronCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+/* Full-height Poster Image (Left Side) */
+.poster-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: auto;
+  z-index: -1;
+  overflow: hidden;
+  animation: posterIn 2s ease forwards;
+}
+
+.poster-image {
+  height: 100vh;
+  width: auto;
+  object-fit: cover;
+  opacity: 0.85;
+  filter: grayscale(10%) brightness(1.1);
+  transform: scale(1.05);
+}
+
+/* Poster Visual Blending Overlay */
+.poster-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at bottom right, rgba(245, 251, 255, 0.6) 0%, transparent 60%),
+    linear-gradient(to right, rgba(245, 251, 255, 0.8) 0%, transparent 25%),
+    linear-gradient(to bottom, rgba(245, 251, 255, 0.8) 0%, transparent 35%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* Poster Fade-in Animation */
+@keyframes posterIn {
+  0% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.0);
+    opacity: 1;
+  }
+}
+
+/* Optional Content Container (if needed) */
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 80px;
+  max-width: 800px;
+}
+
+/* Base Reset and Deep Navy Background */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  padding-top: 60px; /* same as header height */
+  background-color: #0d1117; /* Deep navy tone */
+  color: #f0f6fc; /* Light text for contrast */
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+  position: relative;
 }
 
+/* Make sure content doesn't hide behind fixed header */
 html {
   scroll-padding-top: 60px;
 }
-section {
-  padding-top: 20px; /* extra breathing space */
+
+/* Poster image container fixed to the left */
+.poster-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
 }
 
-section h2 {
-  font-size: 1.6rem; /* a bit smaller than 2rem */
-  font-weight: bold;
-  color: #222;
-  text-align: left;
-  margin-bottom: 1rem;
+/* Poster image styled to stretch vertically */
+.poster-image {
+  height: 100vh;
+  width: auto;
+  object-fit: cover;
+  opacity: 0.9;
+  filter: grayscale(10%) brightness(1.1);
 }
+
+/* Gradient Overlay for blending */
+.poster-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  background: linear-gradient(
+    to right,
+    #0d1117 6%,       /* 40% blend on left */
+    rgba(13, 17, 23, 0.4) 60%,  /* gradual blend */
+    rgba(13, 17, 23, 0.2) 80%,  /* slight blend on right */
+    transparent 100%            /* fade to clear */
+  );
+  
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+
+/* this for name 
+/* Hero container */
+.hero {
+  position: absolute;
+  top: 80px;              /* Distance from top */
+  right: 250px;            /* Distance from right */
+  text-align: right;
+  z-index: 1;
+  color: #f0f6fc;
+  max-width: 600px;
+}
+
+/* Text block inside hero */
+.hero-text {
+  max-width: 600px;
+  text-align: left;
+  color: #f0f6fc;
+}
+
+/* Typewriter effect name */
+.typewriter-name {
+  font-size: 2rem;
+  font-weight: bold;
+  border-right: 2px solid #58a6ff;
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content;
+  margin-bottom: 1rem;
+  color: #58a6ff;
+}
+
+.hero-text h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+
 #about h2 {
-  font-size: 1.6rem !important;
-  font-weight: bold;
-  color: #222;
-  text-align: left;
-  margin-bottom: 1rem;
+  color: #58a6ff; /* GitHub-style light blue */
 }
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f5fbff; /* Very light blue */
-  color: #333;
+/* Light blue section headings */
+.section-heading,
+#certifications h2 {
+  color: #58a6ff;
+}
+
+#contact h2,
+.section-heading {
+  color: #58a6ff;
+}
+
+.section-heading {
+  color: #58a6ff;
+}
+
+/* --------------------------------------------------
+/* Dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* Icon (three dots) */
+.menu-icon {
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 10px;
+  color: #fff;
+}
+
+/* Dropdown content box */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 200px;
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent for merge effect */
+  backdrop-filter: blur(10px); /* adds blur for glassmorphism */
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(47, 34, 164, 0.2); /* soft green glow */
+  z-index: 999;
+  padding: 10px 0;
+}
+
+/* Show menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* List styling */
+.dropdown-content li {
+  list-style: none;
+  padding: 10px 20px;
+}
+
+/* Link styling */
+.dropdown-content li a {
+  text-decoration: none;
+  color: #b7bde4; /* light green */
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Hover effect on each link */
+.dropdown-content li a:hover {
+    background: transparent;
+  color: #ebeef7;
+}
+
+/* ----------------------------------------------------------------------- */
+/* Zoom in-out animation */
+@keyframes zoomPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Apply animation to menu icon */
+.menu-icon.animate-pulse {
+  animation: zoomPulse 1.5s ease-in-out infinite;
+}
+
+/* ----------------------------------------------------------------------
+/* Skill section adjustments */
+.skills-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px 20px;
+}
+
+.skill-category {
+  flex: 1 1 100%;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.15);
+  transition: transform 0.3s;
+}
+
+.skill-category:hover {
+  transform: scale(1.01);
+}
+
+/* Headings white */
+.skill-category h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Icon layout */
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.skill-icons img {
+  height: 55px;
+  width: auto;
+  margin: 8px 0;
+}
+
+/* Sub-skill headings */
+.sub-skill h4, .sub-sub-skill h5 {
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+/* Paragraph text color */
+.sub-skill p, .sub-sub-skill p {
+  color: #ccc;
+}
+
+/* Responsive: Mobile view */
+@media screen and (max-width: 768px) {
+  .skills-wrapper {
+    flex-direction: column;
+  }
+
+  .skill-category {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}
+
+
+
+/* --------------------------------------------------- */
+/* Skills Section Wrapper */
+.skills-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns for desktop */
+  gap: 30px;
+  padding: 30px 20px;
+}
+
+/* Each skill box */
+.skill-category {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.15);
+  transition: transform 0.3s;
+}
+
+/* Hover effect */
+.skill-category:hover {
+  transform: scale(1.01);
+}
+
+/* Headings white */
+.skill-category h3 {
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* Subheadings white */
+.sub-skill h4,
+.sub-sub-skill h5 {
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.sub-skill p,
+.sub-sub-skill p {
+  color: #ddd;
+}
+
+/* Skill icons layout */
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.skill-icons img {
+  height: 55px;
+  width: auto;
+  margin: 8px 0;
+}
+
+/* Make each image slightly larger */
+.skill-category img {
+  max-height: 55px;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+  .skills-wrapper {
+    grid-template-columns: 1fr; /* Stack one by one */
+  }
+}
+
+
+
+h2.section-heading {
+  color: #58a6ff; /* light blue */
+  text-align: center;
+  padding-top: 30px;
+}
+
+
+
+.hero-text {
+  text-align: center;
+  padding: 40px 50px;
+  max-width: 100%;
+  color: #ffffff;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.full-line {
+  white-space: normal;         /* Allow wrapping if needed */
+  display: block;              /* Full width */
+  width: 100%;
+  margin: 10px auto;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+@media (min-width: 1200px) {
+  .full-line {
+    font-size: 1.25rem;
+  }
+}
+
+.degree {
+  color: #aeefff; /* very light blue */
+  font-weight: 500;
+}
+
+
+/* Override any layout restriction */
+.full-width {
+  width: 100vw;
+  max-width: 100vw;
+  padding: 20px 100px;
+  box-sizing: border-box;
+}
+
+.about-page {
+  display: block;
+  background: transparent;
+}
+
+.about-page h2 {
+  color: #8ecfff; /* Light Blue */
+  font-size: 4rem;         /* ~64px */
+  margin-bottom: 35px;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.about-page p {
+  font-size: 2.6rem;        /* ~42px */
+  color: #e6f1ff;
+  line-height: 3.2;         /* extra line height for better spacing */
+  text-align: justify;
+  margin-bottom: 32px;
+  font-weight: 400;
+  max-width: 95%;           /* spread close to full screen */
+  margin-left: auto;
+  margin-right: auto;
+}
+.content {
+  width: 100%;
+  max-width: 100%;
+  padding: 40px 60px;
+}
+
+.about-page {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .about-page h2 {
+    font-size: 2.4rem;
+  }
+
+  .about-page p {
+    font-size: 1.6rem;
+    line-height: 2.2;
+  }
 }
