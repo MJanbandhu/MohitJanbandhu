@@ -1097,3 +1097,48 @@ h2.section-heading {
     line-height: 2.2;
   }
 }
+
+/* ------------------------------------------------------------------- */
+/* Hide mobile menu by default */
+.mobile-menu, #navLinks {
+  display: none;
+}
+
+/* Show desktop menu by default */
+.desktop-menu {
+  display: block;
+}
+
+/* Responsive - Mobile View */
+@media (max-width: 768px) {
+  /* Show mobile hamburger */
+  .mobile-menu {
+    display: block;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  /* Show mobile nav links (hidden initially) */
+  #navLinks {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 999;
+  }
+
+  #navLinks.show {
+    display: flex;
+  }
+
+  /* Hide desktop three-dot menu */
+  .desktop-menu {
+    display: none;
+  }
+}
