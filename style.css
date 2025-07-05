@@ -1300,14 +1300,14 @@ h2.section-heading {
 .participation-box h3 {
   font-size: 1.4rem;
   margin-bottom: 12px;
-  color: #222;
+  color: #ffffff;
 }
 
 /* Project Text */
 .participation-box p {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: #444;
+  color: #dddddd;
 }
 
 /* Responsive Adjustments */
