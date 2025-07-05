@@ -1568,3 +1568,51 @@ h2.section-heading {
 .inline-link:hover {
   text-decoration: underline;
 }
+
+/* --------------- */
+.cert-box {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cert-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: #ddd;
+  position: relative;
+  transition: transform 0.3s;
+  cursor: default;
+  word-wrap: break-word;
+  box-sizing: border-box;
+}
+
+/* ----------------------------------------------------------- */
+@media (max-width: 768px) {
+  #certifications,
+  #contact,
+  #recent-participation {
+    padding: 1rem;
+  }
+
+  .cert-box {
+    padding: 1rem;
+  }
+
+  .cert-card {
+    padding: 0.9rem;
+    font-size: 0.95rem;
+  }
+}
+/* ----------------------------------------------------------- */
+#contact .section-heading,
+#certifications .section-heading {
+  color: #58a6ff;
+}
