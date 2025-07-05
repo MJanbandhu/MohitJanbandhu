@@ -1616,3 +1616,84 @@ h2.section-heading {
 #certifications .section-heading {
   color: #58a6ff;
 }
+
+/* ----------------------------------------------------------- */
+
+/* PROJECT SECTION */
+#projects {
+  max-width: 960px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+}
+
+#projects .section-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #58a6ff;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* Each project category group */
+.project-group {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.08);
+}
+
+/* Group heading – updated (no horizontal line) */
+.project-group-title {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */ /* Removed */
+  /* padding-bottom: 0.5rem; */ /* Optional – also removed */
+}
+
+/* Project box inside group */
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  color: #ddd;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.01);
+}
+
+/* Title and link */
+.project-card a {
+  text-decoration: none;
+  color: #58a6ff;
+}
+
+.project-card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  #projects {
+    padding: 1rem;
+  }
+
+  .project-group {
+    padding: 1rem;
+  }
+
+  .project-card {
+    font-size: 0.95rem;
+  }
+
+  .project-group-title {
+    font-size: 1.1rem;
+  }
+}
