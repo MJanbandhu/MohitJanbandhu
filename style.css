@@ -1144,30 +1144,14 @@ h2.section-heading {
 }
 
 /* --------------------------------------------------------
-/* Contact Section Wrapper */
+/* Contact Section Container */
 #contact {
   max-width: 900px;
   margin: 3rem auto;
   padding: 30px 20px;
 }
 
-/* Contact Box – Match skill-category style */
-.contact-box {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 10px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 0 12px rgba(0, 255, 153, 0.15);
-  margin-bottom: 20px;
-  transition: transform 0.3s;
-}
-
-/* Hover effect like skills */
-.contact-box:hover {
-  transform: scale(1.01);
-}
-
-/* Heading */
+/* Contact Section Heading */
 #contact .section-heading {
   font-size: 1.8rem;
   font-weight: bold;
@@ -1176,20 +1160,52 @@ h2.section-heading {
   text-align: left;
 }
 
-/* Contact Links */
+/* Each Contact Box */
+.contact-box {
+  background: rgba(255, 255, 255, 0.05);  /* Transparent glass-style */
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 12px rgba(0, 119, 255, 0.15);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effect */
+.contact-box:hover {
+  transform: scale(1.01);
+}
+
+/* Link inside the box */
 .contact-box a {
   display: flex;
   align-items: center;
-  font-size: 1.1rem;
-  color: #ddd;
   text-decoration: none;
+  font-size: 1.1rem;
+  color: #ffffff;
   font-weight: 500;
 }
 
-/* Icon inside contact */
+/* Icon inside the box */
 .contact-box img {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   margin-right: 12px;
-  vertical-align: middle;
+  filter: brightness(0) invert(1); /* makes icon white */
+}
+
+/* Responsive behavior */
+@media (max-width: 600px) {
+  .contact-box {
+    padding: 16px;
+  }
+
+  .contact-box a {
+    font-size: 1rem;
+  }
+
+  .contact-box img {
+    width: 26px;
+    height: 26px;
+  }
 }
