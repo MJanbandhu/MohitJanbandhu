@@ -1,5 +1,5 @@
 ## Welcome to the official portfolio website of Mohit Janbandhu
-#### A certified Data Scientist (IABAC & NASSCOM). And Software Engineer, Data Science, AI/ML/DL and Data Analysis Practitioner.
+#### A certified Data Scientist (IABAC & NASSCOM). And Data Science, Software Engineer, AI/ML/DL and Data Analysis Practitioner.
 This site showcases my qualifications, projects, skills, certifications and professional achievements.
 
  
