@@ -1259,3 +1259,72 @@ h2.section-heading {
   line-height: 1.7;
   color: #dddddd;
 }
+/* Mobile too
+/* Recent Participation Section */
+#recent-participation {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 30px 20px;
+}
+
+/* Section Heading */
+#recent-participation .section-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* Clickable Card Wrapper */
+.participation-box {
+  display: block;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 12px rgba(0, 119, 255, 0.15);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Effect */
+.participation-box:hover {
+  transform: scale(1.01);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Project Title */
+.participation-box h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+/* Project Text */
+.participation-box p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #recent-participation {
+    padding: 20px 15px;
+  }
+
+  .participation-box {
+    padding: 18px;
+  }
+
+  .participation-box h3 {
+    font-size: 1.2rem;
+  }
+
+  .participation-box p {
+    font-size: 1rem;
+  }
+}
