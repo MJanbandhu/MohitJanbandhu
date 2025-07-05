@@ -1097,3 +1097,603 @@ h2.section-heading {
     line-height: 2.2;
   }
 }
+
+/* ------------------------------------------------------------------- */
+/* Hide mobile menu by default */
+.mobile-menu, #navLinks {
+  display: none;
+}
+
+/* Show desktop menu by default */
+.desktop-menu {
+  display: block;
+}
+
+/* Responsive - Mobile View */
+@media (max-width: 768px) {
+  /* Show mobile hamburger */
+  .mobile-menu {
+    display: block;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  /* Show mobile nav links (hidden initially) */
+  #navLinks {
+    display: none;
+    flex-direction: column;
+    background: rgba(46, 46, 46, 0.63);
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 999;
+  }
+
+  #navLinks.show {
+    display: flex;
+  }
+
+  /* Hide desktop three-dot menu */
+  .desktop-menu {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------
+/* Contact Section Container */
+#contact {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 30px 20px;
+}
+
+/* Contact Section Heading */
+#contact .section-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* Each Contact Box */
+.contact-box {
+  background: rgba(255, 255, 255, 0.05);  /* Transparent glass-style */
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 12px rgba(0, 119, 255, 0.15);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effect */
+.contact-box:hover {
+  transform: scale(1.01);
+}
+
+/* Link inside the box */
+.contact-box a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Icon inside the box */
+.contact-box img {
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
+  filter: brightness(0) invert(1); /* makes icon white */
+}
+
+/* Responsive behavior */
+@media (max-width: 600px) {
+  .contact-box {
+    padding: 16px;
+  }
+
+  .contact-box a {
+    font-size: 1rem;
+  }
+
+  .contact-box img {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+/* Section Wrapper */
+#recent-participation {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 30px 20px;
+}
+
+/* Section Heading */
+#recent-participation .section-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* Card Style Link Wrapper */
+.participation-box {
+  display: block;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 12px rgba(0, 119, 255, 0.15);
+  text-decoration: none;
+  color: #ffffff;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Effect */
+.participation-box:hover {
+  transform: scale(1.01);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Project Content */
+.project h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.project p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #dddddd;
+}
+/* Mobile too
+/* Recent Participation Section */
+#recent-participation {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 30px 20px;
+}
+
+/* Section Heading */
+#recent-participation .section-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* Clickable Card Wrapper */
+.participation-box {
+  display: block;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 12px rgba(0, 119, 255, 0.15);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Effect */
+.participation-box:hover {
+  transform: scale(1.01);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Project Title */
+.participation-box h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+/* Project Text */
+.participation-box p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #dddddd;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #recent-participation {
+    padding: 20px 15px;
+  }
+
+  .participation-box {
+    padding: 18px;
+  }
+
+  .participation-box h3 {
+    font-size: 1.2rem;
+  }
+
+  .participation-box p {
+    font-size: 1rem;
+  }
+}
+
+/*Heading */
+#contact .section-heading,
+#recent-participation .section-heading {
+  color: #58a6ff;
+}
+.section-heading {
+  color: #58a6ff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+/* ------------------------------------------------------------------ */
+#certifications {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 2rem;
+}
+
+#certifications .section-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #58a6ff;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* Each license/cert section block */
+.cert-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.08);
+}
+
+.cert-box h3 {
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+/* Grid for boxes */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* Individual item box */
+.cert-item {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 14px 16px;
+  border-radius: 10px;
+  color: #ddd;
+  font-size: 1rem;
+  transition: transform 0.3s ease, background-color 0.3s;
+  box-shadow: 0 0 10px rgba(0, 255, 153, 0.05);
+  cursor: default;
+}
+
+/* Hover effect */
+.cert-item:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Anchor inside box */
+.cert-item a {
+  color: #58a6ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cert-item a:hover {
+  text-decoration: underline;
+}
+
+/* Tooltip on hover */
+.cert-item[title] {
+  position: relative;
+}
+
+
+#certifications {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 2rem;
+}
+
+#certifications .section-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #58a6ff;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* Subheadings (Licenses / Certifications) */
+.sub-heading {
+  color: #58a6ff;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+/* Box wrapper */
+.cert-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.08);
+}
+
+/* Grid layout */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* Box for each item */
+.cert-item {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 14px 16px;
+  border-radius: 10px;
+  color: #ddd;
+  font-size: 1rem;
+  transition: transform 0.3s ease, background-color 0.3s;
+  box-shadow: 0 0 10px rgba(0, 255, 153, 0.05);
+  cursor: default;
+}
+
+.cert-item:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Anchor links */
+.cert-item a {
+  color: #58a6ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cert-item a:hover {
+  text-decoration: underline;
+}
+
+/* Tooltip (via title attribute) */
+.cert-item[title] {
+  position: relative;
+}
+
+
+/* Main Section Container */
+#certifications {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 1rem;
+}
+
+/* Section Headings */
+.section-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #58a6ff;
+  margin-bottom: 2rem;
+}
+
+/* Subheading */
+.cert-subheading {
+  font-size: 1.4rem;
+  color: #58a6ff;
+  margin: 1rem 0;
+}
+
+/* Box for each license/cert group */
+.cert-box {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.1);
+}
+
+/* Each certification/License card */
+.cert-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: #ddd;
+  position: relative;
+  transition: transform 0.3s;
+  cursor: default;
+}
+
+/* Hover effect */
+.cert-card:hover {
+  transform: scale(1.01);
+}
+
+/* Tooltip styling */
+.cert-card::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  transform: translateY(-5px);
+  background: rgba(50, 50, 50, 0.85);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show tooltip on hover */
+.cert-card:hover::after {
+  opacity: 1;
+  transform: translateY(-10px);
+}
+
+/* Link inside text */
+.inline-link {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+.inline-link:hover {
+  text-decoration: underline;
+}
+
+/* --------------- */
+.cert-box {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cert-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: #ddd;
+  position: relative;
+  transition: transform 0.3s;
+  cursor: default;
+  word-wrap: break-word;
+  box-sizing: border-box;
+}
+
+/* ----------------------------------------------------------- */
+@media (max-width: 768px) {
+  #certifications,
+  #contact,
+  #recent-participation {
+    padding: 1rem;
+  }
+
+  .cert-box {
+    padding: 1rem;
+  }
+
+  .cert-card {
+    padding: 0.9rem;
+    font-size: 0.95rem;
+  }
+}
+/* ----------------------------------------------------------- */
+#contact .section-heading,
+#certifications .section-heading {
+  color: #58a6ff;
+}
+
+/* ----------------------------------------------------------- */
+
+/* PROJECT SECTION */
+#projects {
+  max-width: 960px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+}
+
+#projects .section-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #58a6ff;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* Each project category group */
+.project-group {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.08);
+}
+
+/* Group heading – updated (no horizontal line) */
+.project-group-title {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */ /* Removed */
+  /* padding-bottom: 0.5rem; */ /* Optional – also removed */
+}
+
+/* Project box inside group */
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  color: #ddd;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.01);
+}
+
+/* Title and link */
+.project-card a {
+  text-decoration: none;
+  color: #58a6ff;
+}
+
+.project-card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  #projects {
+    padding: 1rem;
+  }
+
+  .project-group {
+    padding: 1rem;
+  }
+
+  .project-card {
+    font-size: 0.95rem;
+  }
+
+  .project-group-title {
+    font-size: 1.1rem;
+  }
+}

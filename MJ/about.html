@@ -11,12 +11,6 @@
   <!-- Neural Canvas Background -->
   <canvas id="neuronCanvas"></canvas>
 
-  <!-- Poster Image (Left Full Height) 
-  <div class="poster-container">
-    <img src="../images/profile.jpg" alt="Profile Poster" class="poster-image" />
-    <div class="poster-overlay"></div>
-  </div> -->
-
   <!-- Header & Navigation -->
   <header>
     <nav>
@@ -24,7 +18,7 @@
 
       <!-- Desktop Dropdown Menu -->
       <div class="dropdown desktop-menu">
-        <div class="menu-icon">⋯</div>
+        <div class="menu-icon">☰</div>
         <ul class="dropdown-content">
           <li><a href="about.html">About</a></li>
           <li><a href="skills.html">Skills</a></li>
@@ -81,7 +75,79 @@
     <p>© 2025 Mohit Janbandhu</p>
   </footer>
 
-  <!-- Shared JS -->
+  <!-- Chatbot Button + Frame -->
+  <button id="chatbot-toggle" title="Chat with me">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21 6H3V18H8V21L12 18H21V6Z" fill="currentColor"/>
+    </svg>
+  </button>
+
+  <iframe
+    id="chatbot-frame"
+    src="https://chat-bot-mj.onrender.com"
+    title="Chatbot"
+  ></iframe>
+
+  <!-- JS -->
   <script src="../script.js"></script>
+  <script>
+    // Menu toggle for mobile
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      navLinks.classList.toggle("show");
+    }
+
+    // Chatbot toggle
+    const chatbotToggle = document.getElementById('chatbot-toggle');
+    const chatbotFrame = document.getElementById('chatbot-frame');
+    chatbotToggle.addEventListener('click', () => {
+      chatbotFrame.style.display = chatbotFrame.style.display === 'block' ? 'none' : 'block';
+    });
+  </script>
+
+  <!-- Chatbot Styles -->
+  <style>
+    #chatbot-frame {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 360px;
+      height: 500px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+      z-index: 999;
+    }
+
+    #chatbot-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1001;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #chatbot-toggle:hover {
+      background-color: #0056b3;
+    }
+
+    #chatbot-toggle svg {
+      width: 28px;
+      height: 28px;
+    }
+  </style>
 </body>
 </html>
