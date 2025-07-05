@@ -1124,7 +1124,7 @@ h2.section-heading {
   #navLinks {
     display: none;
     flex-direction: column;
-    background: rgba(188, 186, 208, 0.63);
+    background: rgba(67, 67, 67, 0.63);
     position: absolute;
     top: 60px;
     right: 10px;
@@ -1144,54 +1144,53 @@ h2.section-heading {
 }
 
 /* --------------------------------------------------------
-/* Contact Section Styling */
+/* Contact Section Container */
 #contact {
-  max-width: 800px;
+  max-width: 900px;
   margin: 3rem auto;
   padding: 2rem;
   background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
-#contact .section-heading {
+/* Section Heading */
+#contact h2.section-heading {
   font-size: 1.8rem;
   font-weight: bold;
   color: #222;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   text-align: left;
 }
 
-/* Contact link containers */
-#contact p {
-  background-color: #f0f8ff;
-  border: 1px solid #dbe9f4;
+/* Box Container for Each Contact Item */
+.contact-box {
+  background-color: #f5fbff;
+  border: 1px solid #d3e3f0;
   border-radius: 8px;
   padding: 1rem 1.2rem;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
+  margin-bottom: 1.2rem;
   transition: background-color 0.3s ease;
 }
 
-#contact p:hover {
-  background-color: #e4f2fb;
+/* Hover Effect */
+.contact-box:hover {
+  background-color: #e8f4ff;
 }
 
-/* Link styles */
-#contact a {
+/* Link Styles Inside Box */
+.contact-box a {
   display: flex;
   align-items: center;
   font-size: 1.1rem;
-  color: #333;
-  text-decoration: none;
   font-weight: 500;
+  color: #222;
+  text-decoration: none;
 }
 
-/* Icon styles */
-#contact img {
+/* Icon */
+.contact-box img {
   width: 28px;
   height: 28px;
-  vertical-align: middle;
   margin-right: 12px;
 }
