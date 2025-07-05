@@ -1328,3 +1328,243 @@ h2.section-heading {
     font-size: 1rem;
   }
 }
+
+/*Heading */
+#contact .section-heading,
+#recent-participation .section-heading {
+  color: #58a6ff;
+}
+.section-heading {
+  color: #58a6ff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+/* ------------------------------------------------------------------ */
+#certifications {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 2rem;
+}
+
+#certifications .section-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #58a6ff;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* Each license/cert section block */
+.cert-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.08);
+}
+
+.cert-box h3 {
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+/* Grid for boxes */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* Individual item box */
+.cert-item {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 14px 16px;
+  border-radius: 10px;
+  color: #ddd;
+  font-size: 1rem;
+  transition: transform 0.3s ease, background-color 0.3s;
+  box-shadow: 0 0 10px rgba(0, 255, 153, 0.05);
+  cursor: default;
+}
+
+/* Hover effect */
+.cert-item:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Anchor inside box */
+.cert-item a {
+  color: #58a6ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cert-item a:hover {
+  text-decoration: underline;
+}
+
+/* Tooltip on hover */
+.cert-item[title] {
+  position: relative;
+}
+
+
+#certifications {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 2rem;
+}
+
+#certifications .section-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #58a6ff;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* Subheadings (Licenses / Certifications) */
+.sub-heading {
+  color: #58a6ff;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+/* Box wrapper */
+.cert-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.08);
+}
+
+/* Grid layout */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* Box for each item */
+.cert-item {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 14px 16px;
+  border-radius: 10px;
+  color: #ddd;
+  font-size: 1rem;
+  transition: transform 0.3s ease, background-color 0.3s;
+  box-shadow: 0 0 10px rgba(0, 255, 153, 0.05);
+  cursor: default;
+}
+
+.cert-item:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Anchor links */
+.cert-item a {
+  color: #58a6ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cert-item a:hover {
+  text-decoration: underline;
+}
+
+/* Tooltip (via title attribute) */
+.cert-item[title] {
+  position: relative;
+}
+
+
+/* Main Section Container */
+#certifications {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 1rem;
+}
+
+/* Section Headings */
+.section-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #58a6ff;
+  margin-bottom: 2rem;
+}
+
+/* Subheading */
+.cert-subheading {
+  font-size: 1.4rem;
+  color: #58a6ff;
+  margin: 1rem 0;
+}
+
+/* Box for each license/cert group */
+.cert-box {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.1);
+}
+
+/* Each certification/License card */
+.cert-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: #ddd;
+  position: relative;
+  transition: transform 0.3s;
+  cursor: default;
+}
+
+/* Hover effect */
+.cert-card:hover {
+  transform: scale(1.01);
+}
+
+/* Tooltip styling */
+.cert-card::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  transform: translateY(-5px);
+  background: rgba(50, 50, 50, 0.85);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show tooltip on hover */
+.cert-card:hover::after {
+  opacity: 1;
+  transform: translateY(-10px);
+}
+
+/* Link inside text */
+.inline-link {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+.inline-link:hover {
+  text-decoration: underline;
+}
