@@ -1124,7 +1124,7 @@ h2.section-heading {
   #navLinks {
     display: none;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(190, 183, 242, 0.63);
     position: absolute;
     top: 60px;
     right: 10px;
