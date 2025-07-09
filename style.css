@@ -1576,7 +1576,7 @@ h2.section-heading {
   background: rgba(255, 255, 255, 0.04);
   border-radius: 10px;
   backdrop-filter: blur(6px);
-  box-shadow: 0 0 12px rgba(0, 255, 153, 0.1);
+  box-shadow: 0 0 12px rgba(128, 129, 129, 0.075);
   width: 100%;
   box-sizing: border-box;
 }
@@ -1660,7 +1660,7 @@ h2.section-heading {
   border-radius: 8px;
   margin-bottom: 1rem;
   color: #ddd;
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.015);
   transition: transform 0.2s ease;
 }
 
@@ -1695,5 +1695,166 @@ h2.section-heading {
 
   .project-group-title {
     font-size: 1.1rem;
+  }
+}
+
+
+
+/* About Section Layout */
+#about-section {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+/* Heading OUTSIDE the box */
+#about-section .section-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #58a6ff; /* light blue */
+  text-align: left;
+}
+
+/* Transparent content box */
+.about-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.037);
+  color: #eee;
+}
+
+/* Paragraph styling */
+.about-box p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #ccc;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+/* Responsive for smaller devices */
+@media (max-width: 768px) {
+  #about-section {
+    padding: 0 1rem;
+  }
+
+  .about-box {
+    padding: 1.5rem;
+  }
+}
+
+
+
+
+/* Reusable Info Box */
+.info-box {
+  margin: 1.5rem auto;
+  padding: 1.2rem 1.8rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.037);
+  color: #ddd;
+  font-size: 1.05rem;
+  text-align: center;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.info-box:hover {
+  transform: scale(1.02);
+}
+
+/* Education degree font styling */
+.info-box .degree {
+  font-weight: 500;
+  margin: 6px 0;
+}
+
+/* Tooltip style */
+.info-box::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(88, 166, 255, 0.95);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.info-box:hover::after {
+  opacity: 1;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .info-box {
+    font-size: 0.95rem;
+    padding: 1rem;
+  }
+  .info-box::after {
+    top: -40px;
+    font-size: 0.8rem;
+  }
+}
+
+/* ---------- Index Page Info Box & Tooltip Styling ---------- */
+
+.info-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1.2rem;
+  color: #ddd;
+  position: relative;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 12px rgba(81, 81, 81, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.info-box:hover {
+  transform: scale(1.01);
+}
+
+/* Tooltip mimic same as cert-card::after */
+.info-box::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  transform: translateY(-5px);
+  background: rgba(50, 50, 50, 0.85);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+.info-box:hover::after {
+  opacity: 1;
+  transform: translateY(-10px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .info-box {
+    padding: 0.9rem;
+    font-size: 0.95rem;
   }
 }
